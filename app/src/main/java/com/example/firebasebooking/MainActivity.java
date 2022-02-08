@@ -43,6 +43,11 @@ public class MainActivity extends AppCompatActivity {
         Button buttonB5 = findViewById(R.id.b5);
         Button buttonB6 = findViewById(R.id.b6);
 
+        Button reportsButton = findViewById(R.id.reportsButton);
+        reportsButton.setOnClickListener(view -> {
+            startActivity(new Intent(MainActivity.this,ReportingActivity.class));
+        });
+
         gridLayoutBanglore.setVisibility(View.GONE);
         mySwitch.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
             public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {

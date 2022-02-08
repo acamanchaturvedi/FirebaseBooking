@@ -10,6 +10,12 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.FirebaseBooking">
         <activity
+            android:name=".ReportsActivity"
+            android:exported="false" />
+        <activity
+            android:name=".ReportingActivity"
+            android:exported="false" />
+        <activity
             android:name=".BookingActivity"
             android:exported="false" />
         <activity
