@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "538528000393",
+    "project_id": "fir-b-cea12",
+    "storage_bucket": "fir-b-cea12.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:538528000393:android:c4905e2083893828431958",
+        "android_client_info": {
+          "package_name": "com.example.firebasebooking"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "538528000393-9i2jbjvdb9m49fh8td38h0c1orp2pfgm.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBwOF5wFA5JUWueuSTwYqKdYV29ZVnojVk"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "538528000393-9i2jbjvdb9m49fh8td38h0c1orp2pfgm.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
