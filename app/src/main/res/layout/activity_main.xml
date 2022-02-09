@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
@@ -35,11 +36,12 @@
             android:text="Bengaluru" />
     </LinearLayout>
 
-    <androidx.gridlayout.widget.GridLayout
-        android:id="@+id/gridLayoutJaipur"
+    <LinearLayout
+        android:id="@+id/linearLayoutJaipur"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="32dp"
+        android:orientation="vertical"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.5"
@@ -53,7 +55,7 @@
             android:layout_height="wrap_content"
             android:onClick="book"
             android:tag="Jaipur"
-            android:text="6AM-7AM_J"
+            android:text="6:00AM-7:30AM_J"
             app:layout_column="0"
             app:layout_row="0" />
 
@@ -63,7 +65,7 @@
             android:layout_height="wrap_content"
             android:onClick="book"
             android:tag="Jaipur"
-            android:text="7AM-8AM_J"
+            android:text="7:30AM-9:00AM_J"
             app:layout_column="1"
             app:layout_row="0" />
 
@@ -73,7 +75,7 @@
             android:layout_height="wrap_content"
             android:onClick="book"
             android:tag="Jaipur"
-            android:text="8AM-9AM_J"
+            android:text="5:00PM-6:30PM_J"
             app:layout_column="0"
             app:layout_row="1" />
 
@@ -83,36 +85,18 @@
             android:layout_height="wrap_content"
             android:onClick="book"
             android:tag="Jaipur"
-            android:text="5PM-6PM_J"
+            android:text="6:30PM-8:00PM_J"
             app:layout_column="1"
             app:layout_row="1" />
 
-        <Button
-            android:id="@+id/j5"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:onClick="book"
-            android:tag="Jaipur"
-            android:text="6PM-7PM_J"
-            app:layout_column="0"
-            app:layout_row="2" />
+    </LinearLayout>
 
-        <Button
-            android:id="@+id/j6"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:onClick="book"
-            android:tag="Jaipur"
-            android:text="7PM-8PM_J"
-            app:layout_column="1"
-            app:layout_row="2" />
-    </androidx.gridlayout.widget.GridLayout>
-
-    <androidx.gridlayout.widget.GridLayout
-        android:id="@+id/gridLayoutBanglore"
+    <LinearLayout
+        android:id="@+id/linearLayoutBanglore"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="32dp"
+        android:orientation="vertical"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.5"
@@ -126,7 +110,7 @@
             android:layout_height="wrap_content"
             android:onClick="book"
             android:tag="Banglore"
-            android:text="6AM-7AM_B"
+            android:text="6:00AM-7:30AM_B"
             app:layout_column="0"
             app:layout_row="0" />
 
@@ -136,7 +120,7 @@
             android:layout_height="wrap_content"
             android:onClick="book"
             android:tag="Banglore"
-            android:text="7AM-8AM_B"
+            android:text="7:30AM-9:00AM_B"
             app:layout_column="1"
             app:layout_row="0" />
 
@@ -146,7 +130,7 @@
             android:layout_height="wrap_content"
             android:onClick="book"
             android:tag="Banglore"
-            android:text="8AM-9AM_B"
+            android:text="5:00PM-6:30PM_B"
             app:layout_column="0"
             app:layout_row="1" />
 
@@ -156,31 +140,12 @@
             android:layout_height="wrap_content"
             android:onClick="book"
             android:tag="Banglore"
-            android:text="5PM-6PM_B"
+            android:text="6:30PM-8:00PM_B"
             app:layout_column="1"
             app:layout_row="1" />
 
-        <Button
-            android:id="@+id/b5"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:onClick="book"
-            android:tag="Banglore"
-            android:text="6PM-7PM_B"
-            app:layout_column="0"
-            app:layout_row="2" />
 
-        <Button
-            android:id="@+id/b6"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:onClick="book"
-            android:tag="Banglore"
-            android:text="7PM-8PM_B"
-            app:layout_column="1"
-            app:layout_row="2" />
-
-    </androidx.gridlayout.widget.GridLayout>
+    </LinearLayout>
 
     <Button
         android:id="@+id/reportsButton"

@@ -21,18 +21,14 @@ public class ReportingActivity extends AppCompatActivity {
 
         ListView slotsListView = findViewById(R.id.slotsListView);
         ArrayList<String> list = new ArrayList<>();
-        list.add("6AM-7AM_J");
-        list.add("7AM-8AM_J");
-        list.add("8AM-9AM_J");
-        list.add("5PM-6PM_J");
-        list.add("6PM-7PM_J");
-        list.add("7PM-8PM_J");
-        list.add("6AM-7AM_B");
-        list.add("7AM-8AM_B");
-        list.add("8AM-9AM_B");
-        list.add("5PM-6PM_B");
-        list.add("6PM-7PM_B");
-        list.add("7PM-8PM_B");
+        list.add("6:00AM-7:30AM_J");
+        list.add("7:30AM-9:00AM_J");
+        list.add("5:00PM-6:30PM_J");
+        list.add("6:30PM-8:00PM_J");
+        list.add("6:00AM-7:30AM_B");
+        list.add("7:30AM-9:00AM_B");
+        list.add("5:00PM-6:30PM_B");
+        list.add("6:30PM-8:00PM_B");
         ArrayAdapter<String> adapter = new ArrayAdapter<>(this, android.R.layout.simple_list_item_1,list);
         slotsListView.setAdapter(adapter);
 

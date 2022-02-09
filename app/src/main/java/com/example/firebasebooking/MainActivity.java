@@ -10,6 +10,7 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.CompoundButton;
+import android.widget.LinearLayout;
 import android.widget.Switch;
 import android.widget.Toast;
 
@@ -25,14 +26,10 @@ public class MainActivity extends AppCompatActivity {
     Button buttonJ2;
     Button buttonJ3;
     Button buttonJ4;
-    Button buttonJ5;
-    Button buttonJ6;
     Button buttonB1;
     Button buttonB2;
     Button buttonB3;
     Button buttonB4;
-    Button buttonB5;
-    Button buttonB6;
 
     public void book(View view) {
         Button b=(Button)view;
@@ -50,35 +47,31 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
 
         Switch mySwitch = findViewById(R.id.reminder);
-        GridLayout gridLayoutJaipur=findViewById(R.id.gridLayoutJaipur);
-        GridLayout gridLayoutBanglore=findViewById(R.id.gridLayoutBanglore);
+        LinearLayout linearLayoutJaipur=findViewById(R.id.linearLayoutJaipur);
+        LinearLayout linearLayoutBanglore=findViewById(R.id.linearLayoutBanglore);
         buttonJ1 = findViewById(R.id.j1);
         buttonJ2 = findViewById(R.id.j2);
         buttonJ3 = findViewById(R.id.j3);
         buttonJ4 = findViewById(R.id.j4);
-        buttonJ5 = findViewById(R.id.j5);
-        buttonJ6 = findViewById(R.id.j6);
         buttonB1 = findViewById(R.id.b1);
         buttonB2 = findViewById(R.id.b2);
         buttonB3 = findViewById(R.id.b3);
         buttonB4 = findViewById(R.id.b4);
-        buttonB5 = findViewById(R.id.b5);
-        buttonB6 = findViewById(R.id.b6);
 
         Button reportsButton = findViewById(R.id.reportsButton);
         reportsButton.setOnClickListener(view -> {
             startActivity(new Intent(MainActivity.this,ReportingActivity.class));
         });
 
-        gridLayoutBanglore.setVisibility(View.GONE);
+        linearLayoutBanglore.setVisibility(View.GONE);
         mySwitch.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
             public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
                 if(isChecked==true) {
-                    gridLayoutJaipur.setVisibility(View.GONE);
-                    gridLayoutBanglore.setVisibility(View.VISIBLE);
+                    linearLayoutJaipur.setVisibility(View.GONE);
+                    linearLayoutBanglore.setVisibility(View.VISIBLE);
                 } else {
-                    gridLayoutJaipur.setVisibility(View.VISIBLE);
-                    gridLayoutBanglore.setVisibility(View.GONE);
+                    linearLayoutJaipur.setVisibility(View.VISIBLE);
+                    linearLayoutBanglore.setVisibility(View.GONE);
                 }
             }
         });
@@ -88,43 +81,30 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onChildAdded(@NonNull DataSnapshot dataSnapshot, @Nullable String previousChildName) {
                 //Toast.makeText(MainActivity.this,dataSnapshot.getKey()+"_"+dataSnapshot.getChildrenCount() , Toast.LENGTH_SHORT).show();
-                if(dataSnapshot.getChildrenCount()==5&&dataSnapshot.getKey().equals("6AM-7AM_J")) {
+                if(dataSnapshot.getChildrenCount()==5&&dataSnapshot.getKey().equals("6:00AM-7:30AM_J")) {
                     buttonJ1.setEnabled(false);
                 }
-                if(dataSnapshot.getChildrenCount()==5&&dataSnapshot.getKey().equals("7AM-8AM_J")) {
+                if(dataSnapshot.getChildrenCount()==5&&dataSnapshot.getKey().equals("7:30AM-9:00AM_J")) {
                     buttonJ2.setEnabled(false);
                 }
-                if(dataSnapshot.getChildrenCount()==5&&dataSnapshot.getKey().equals("8AM-9AM_J")) {
+                if(dataSnapshot.getChildrenCount()==5&&dataSnapshot.getKey().equals("5:00PM-6:30PM_J")) {
                     buttonJ3.setEnabled(false);
                 }
-                if(dataSnapshot.getChildrenCount()==5&&dataSnapshot.getKey().equals("5PM-6PM_J")) {
+                if(dataSnapshot.getChildrenCount()==5&&dataSnapshot.getKey().equals("6:30PM-8:00PM_J")) {
                     buttonJ4.setEnabled(false);
                 }
-                if(dataSnapshot.getChildrenCount()==5&&dataSnapshot.getKey().equals("6PM-7PM_J")) {
-                    buttonJ5.setEnabled(false);
-                }
-                if(dataSnapshot.getChildrenCount()==5&&dataSnapshot.getKey().equals("7PM-8PM_J")) {
-                    buttonJ6.setEnabled(false);
-                }
-                if(dataSnapshot.getChildrenCount()==5&&dataSnapshot.getKey().equals("6AM-7AM_B")) {
+                if(dataSnapshot.getChildrenCount()==5&&dataSnapshot.getKey().equals("6:00AM-7:30AM_B")) {
                     buttonB1.setEnabled(false);
                 }
-                if(dataSnapshot.getChildrenCount()==5&&dataSnapshot.getKey().equals("7AM-8AM_B")) {
+                if(dataSnapshot.getChildrenCount()==5&&dataSnapshot.getKey().equals("7:30AM-9:00AM_B")) {
                     buttonB2.setEnabled(false);
                 }
-                if(dataSnapshot.getChildrenCount()==5&&dataSnapshot.getKey().equals("8AM-9AM_B")) {
+                if(dataSnapshot.getChildrenCount()==5&&dataSnapshot.getKey().equals("5:00PM-6:30PM_B")) {
                     buttonB3.setEnabled(false);
                 }
-                if(dataSnapshot.getChildrenCount()==5&&dataSnapshot.getKey().equals("5PM-6PM_B")) {
+                if(dataSnapshot.getChildrenCount()==5&&dataSnapshot.getKey().equals("6:30PM-8:00PM_B")) {
                     buttonB4.setEnabled(false);
                 }
-                if(dataSnapshot.getChildrenCount()==5&&dataSnapshot.getKey().equals("6PM-7PM_B")) {
-                    buttonB5.setEnabled(false);
-                }
-                if(dataSnapshot.getChildrenCount()==5&&dataSnapshot.getKey().equals("7PM-8PM_B")) {
-                    buttonB6.setEnabled(false);
-                }
-
 
             }
 
@@ -160,43 +140,30 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onChildAdded(@NonNull DataSnapshot dataSnapshot, @Nullable String previousChildName) {
                 //Toast.makeText(MainActivity.this,dataSnapshot.getKey()+"_"+dataSnapshot.getChildrenCount() , Toast.LENGTH_SHORT).show();
-                if(dataSnapshot.getChildrenCount()==5&&dataSnapshot.getKey().equals("6AM-7AM_J")) {
+                if(dataSnapshot.getChildrenCount()==5&&dataSnapshot.getKey().equals("6:00AM-7:30AM_J")) {
                     buttonJ1.setEnabled(false);
                 }
-                if(dataSnapshot.getChildrenCount()==5&&dataSnapshot.getKey().equals("7AM-8AM_J")) {
+                if(dataSnapshot.getChildrenCount()==5&&dataSnapshot.getKey().equals("7:30AM-9:00AM_J")) {
                     buttonJ2.setEnabled(false);
                 }
-                if(dataSnapshot.getChildrenCount()==5&&dataSnapshot.getKey().equals("8AM-9AM_J")) {
+                if(dataSnapshot.getChildrenCount()==5&&dataSnapshot.getKey().equals("5:00PM-6:30PM_J")) {
                     buttonJ3.setEnabled(false);
                 }
-                if(dataSnapshot.getChildrenCount()==5&&dataSnapshot.getKey().equals("5PM-6PM_J")) {
+                if(dataSnapshot.getChildrenCount()==5&&dataSnapshot.getKey().equals("6:30PM-8:00PM_J")) {
                     buttonJ4.setEnabled(false);
                 }
-                if(dataSnapshot.getChildrenCount()==5&&dataSnapshot.getKey().equals("6PM-7PM_J")) {
-                    buttonJ5.setEnabled(false);
-                }
-                if(dataSnapshot.getChildrenCount()==5&&dataSnapshot.getKey().equals("7PM-8PM_J")) {
-                    buttonJ6.setEnabled(false);
-                }
-                if(dataSnapshot.getChildrenCount()==5&&dataSnapshot.getKey().equals("6AM-7AM_B")) {
+                if(dataSnapshot.getChildrenCount()==5&&dataSnapshot.getKey().equals("6:00AM-7:30AM_B")) {
                     buttonB1.setEnabled(false);
                 }
-                if(dataSnapshot.getChildrenCount()==5&&dataSnapshot.getKey().equals("7AM-8AM_B")) {
+                if(dataSnapshot.getChildrenCount()==5&&dataSnapshot.getKey().equals("7:30AM-9:00AM_B")) {
                     buttonB2.setEnabled(false);
                 }
-                if(dataSnapshot.getChildrenCount()==5&&dataSnapshot.getKey().equals("8AM-9AM_B")) {
+                if(dataSnapshot.getChildrenCount()==5&&dataSnapshot.getKey().equals("5:00PM-6:30PM_B")) {
                     buttonB3.setEnabled(false);
                 }
-                if(dataSnapshot.getChildrenCount()==5&&dataSnapshot.getKey().equals("5PM-6PM_B")) {
+                if(dataSnapshot.getChildrenCount()==5&&dataSnapshot.getKey().equals("6:30PM-8:00PM_B")) {
                     buttonB4.setEnabled(false);
                 }
-                if(dataSnapshot.getChildrenCount()==5&&dataSnapshot.getKey().equals("6PM-7PM_B")) {
-                    buttonB5.setEnabled(false);
-                }
-                if(dataSnapshot.getChildrenCount()==5&&dataSnapshot.getKey().equals("7PM-8PM_B")) {
-                    buttonB6.setEnabled(false);
-                }
-
 
             }
 
@@ -231,43 +198,30 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onChildAdded(@NonNull DataSnapshot dataSnapshot, @Nullable String previousChildName) {
                 //Toast.makeText(MainActivity.this,dataSnapshot.getKey()+"_"+dataSnapshot.getChildrenCount() , Toast.LENGTH_SHORT).show();
-                if(dataSnapshot.getChildrenCount()==5&&dataSnapshot.getKey().equals("6AM-7AM_J")) {
+                if(dataSnapshot.getChildrenCount()==5&&dataSnapshot.getKey().equals("6:00AM-7:30AM_J")) {
                     buttonJ1.setEnabled(false);
                 }
-                if(dataSnapshot.getChildrenCount()==5&&dataSnapshot.getKey().equals("7AM-8AM_J")) {
+                if(dataSnapshot.getChildrenCount()==5&&dataSnapshot.getKey().equals("7:30AM-9:00AM_J")) {
                     buttonJ2.setEnabled(false);
                 }
-                if(dataSnapshot.getChildrenCount()==5&&dataSnapshot.getKey().equals("8AM-9AM_J")) {
+                if(dataSnapshot.getChildrenCount()==5&&dataSnapshot.getKey().equals("5:00PM-6:30PM_J")) {
                     buttonJ3.setEnabled(false);
                 }
-                if(dataSnapshot.getChildrenCount()==5&&dataSnapshot.getKey().equals("5PM-6PM_J")) {
+                if(dataSnapshot.getChildrenCount()==5&&dataSnapshot.getKey().equals("6:30PM-8:00PM_J")) {
                     buttonJ4.setEnabled(false);
                 }
-                if(dataSnapshot.getChildrenCount()==5&&dataSnapshot.getKey().equals("6PM-7PM_J")) {
-                    buttonJ5.setEnabled(false);
-                }
-                if(dataSnapshot.getChildrenCount()==5&&dataSnapshot.getKey().equals("7PM-8PM_J")) {
-                    buttonJ6.setEnabled(false);
-                }
-                if(dataSnapshot.getChildrenCount()==5&&dataSnapshot.getKey().equals("6AM-7AM_B")) {
+                if(dataSnapshot.getChildrenCount()==5&&dataSnapshot.getKey().equals("6:00AM-7:30AM_B")) {
                     buttonB1.setEnabled(false);
                 }
-                if(dataSnapshot.getChildrenCount()==5&&dataSnapshot.getKey().equals("7AM-8AM_B")) {
+                if(dataSnapshot.getChildrenCount()==5&&dataSnapshot.getKey().equals("7:30AM-9:00AM_B")) {
                     buttonB2.setEnabled(false);
                 }
-                if(dataSnapshot.getChildrenCount()==5&&dataSnapshot.getKey().equals("8AM-9AM_B")) {
+                if(dataSnapshot.getChildrenCount()==5&&dataSnapshot.getKey().equals("5:00PM-6:30PM_B")) {
                     buttonB3.setEnabled(false);
                 }
-                if(dataSnapshot.getChildrenCount()==5&&dataSnapshot.getKey().equals("5PM-6PM_B")) {
+                if(dataSnapshot.getChildrenCount()==5&&dataSnapshot.getKey().equals("6:30PM-8:00PM_B")) {
                     buttonB4.setEnabled(false);
                 }
-                if(dataSnapshot.getChildrenCount()==5&&dataSnapshot.getKey().equals("6PM-7PM_B")) {
-                    buttonB5.setEnabled(false);
-                }
-                if(dataSnapshot.getChildrenCount()==5&&dataSnapshot.getKey().equals("7PM-8PM_B")) {
-                    buttonB6.setEnabled(false);
-                }
-
 
             }
 
